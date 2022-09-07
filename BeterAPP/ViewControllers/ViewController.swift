@@ -9,9 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let games = Game.getGames()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
