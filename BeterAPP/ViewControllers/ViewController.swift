@@ -10,12 +10,12 @@ import UIKit
 class ViewController: UIViewController {
 
     let games = Game.getGames()
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.layer.cornerRadius = 10
     }
 
 
 }
-
+// Mark: - UI
