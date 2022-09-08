@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2234CF128C8E8A30000D944 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234CF028C8E8A30000D944 /* GameListViewController.swift */; };
+		A2E041F528C9FF940097CA57 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E041F428C9FF940097CA57 /* CustomTableViewCell.swift */; };
 		C875C82228C88AD2004F55D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82128C88AD2004F55D2 /* AppDelegate.swift */; };
 		C875C82428C88AD2004F55D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82328C88AD2004F55D2 /* SceneDelegate.swift */; };
-		C875C82628C88AD2004F55D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82528C88AD2004F55D2 /* ViewController.swift */; };
-		C875C82928C88AD2004F55D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875C82728C88AD2004F55D2 /* Main.storyboard */; };
+		C875C82928C88AD2004F55D2 /* SecondScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875C82728C88AD2004F55D2 /* SecondScreen.storyboard */; };
 		C875C82B28C88AD4004F55D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C875C82A28C88AD4004F55D2 /* Assets.xcassets */; };
 		C875C82E28C88AD4004F55D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875C82C28C88AD4004F55D2 /* LaunchScreen.storyboard */; };
 		C875C83B28C88F84004F55D2 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C83A28C88F84004F55D2 /* Account.swift */; };
@@ -21,11 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2234CF028C8E8A30000D944 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
+		A2E041F428C9FF940097CA57 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C875C81E28C88AD2004F55D2 /* BeterAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeterAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C875C82128C88AD2004F55D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C875C82328C88AD2004F55D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C875C82528C88AD2004F55D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C875C82828C88AD2004F55D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C875C82828C88AD2004F55D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SecondScreen.storyboard; sourceTree = "<group>"; };
 		C875C82A28C88AD4004F55D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C875C82D28C88AD4004F55D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C875C82F28C88AD4004F55D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		C875C83628C88B32004F55D2 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				C875C82728C88AD2004F55D2 /* Main.storyboard */,
+				C875C82728C88AD2004F55D2 /* SecondScreen.storyboard */,
 				C875C82C28C88AD4004F55D2 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -109,7 +111,8 @@
 		C875C83828C88B7A004F55D2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C875C82528C88AD2004F55D2 /* ViewController.swift */,
+				A2234CF028C8E8A30000D944 /* GameListViewController.swift */,
+				A2E041F428C9FF940097CA57 /* CustomTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -182,7 +185,7 @@
 			files = (
 				C875C82E28C88AD4004F55D2 /* LaunchScreen.storyboard in Resources */,
 				C875C82B28C88AD4004F55D2 /* Assets.xcassets in Resources */,
-				C875C82928C88AD2004F55D2 /* Main.storyboard in Resources */,
+				C875C82928C88AD2004F55D2 /* SecondScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,11 +196,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C875C82628C88AD2004F55D2 /* ViewController.swift in Sources */,
+				A2E041F528C9FF940097CA57 /* CustomTableViewCell.swift in Sources */,
 				C875C83B28C88F84004F55D2 /* Account.swift in Sources */,
 				C875C84328C89A1D004F55D2 /* Game.swift in Sources */,
 				C875C82228C88AD2004F55D2 /* AppDelegate.swift in Sources */,
 				C875C83F28C8919C004F55D2 /* DataStore.swift in Sources */,
+				A2234CF128C8E8A30000D944 /* GameListViewController.swift in Sources */,
 				C875C82428C88AD2004F55D2 /* SceneDelegate.swift in Sources */,
 				C875C84528C89BE7004F55D2 /* GameEvent.swift in Sources */,
 				C875C84128C899B9004F55D2 /* TeamInGame.swift in Sources */,
@@ -207,12 +211,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C875C82728C88AD2004F55D2 /* Main.storyboard */ = {
+		C875C82728C88AD2004F55D2 /* SecondScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C875C82828C88AD2004F55D2 /* Base */,
 			);
-			name = Main.storyboard;
+			name = SecondScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		C875C82C28C88AD4004F55D2 /* LaunchScreen.storyboard */ = {
@@ -347,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7BLV8N5RUN;
+				DEVELOPMENT_TEAM = YG4RG79V23;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BeterAPP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -376,7 +380,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7BLV8N5RUN;
+				DEVELOPMENT_TEAM = YG4RG79V23;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BeterAPP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
