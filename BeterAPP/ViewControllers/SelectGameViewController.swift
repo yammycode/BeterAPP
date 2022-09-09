@@ -49,7 +49,7 @@ final class SelectGameViewController: UIViewController {
     // MARK: - Function
     
     func transmitData() {
-        
+       //
     }
     
     //MARK: - Navigation
