@@ -6,19 +6,27 @@
 //
 
 struct GameEvent {
-    let time: Int
-    let description: String
+    let data = DataStore.shared
+
     let team: Team
     let isGoal: Bool
+    let description: String
+    let time: Int
 
-    /// Метод, которые подставляет в текст события название команды
-    // Он находит вхождение подстроки {{TEAM}} в строке и заменяет на название команды из енума
-    func getFormattedDescription() -> String {
-        let text = description.replacingOccurrences(of: "{{TEAM}}",
-                                                    with: team.rawValue,
-                                                    options: .literal,
-                                                    range: nil)
-        return text
+    init(teamOne: Team, teamTwo: Team, time: Int) {
+        team = Double.random(in: 0...1) > 0.5 ? teamOne : teamTwo
+        isGoal = Double.random(in: 0...1) > 0.7
+
+        let eventTexts = isGoal ? data.goalEventTexts : data.notGoalEventTexts
+        let eventText = eventTexts.shuffled().first ?? ""
+
+        description = eventText.replacingOccurrences(of: "{{TEAM}}",
+                                                     with: team.rawValue,
+                                                     options: .literal,
+                                                     range: nil)
+        self.time = time
     }
 
 }
+
+
