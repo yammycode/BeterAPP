@@ -30,15 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C8092F4E28CB7C17002CE3C2 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		C816027528C91EDC0051CA90 /* GameEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameEvents.storyboard; sourceTree = "<group>"; };
-		C816027728C91F2E0051CA90 /* GameEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEventsViewController.swift; sourceTree = "<group>"; };
 		5B7A1BD928CA6EBB0060FF4E /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		5B7A1BDB28CA6FC50060FF4E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		5B7A1BDE28CA704B0060FF4E /* HeaderHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		A208178728CB6509003A280A /* SelectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameViewController.swift; sourceTree = "<group>"; };
 		A2234CF028C8E8A30000D944 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
 		A2E041F428C9FF940097CA57 /* HeaderGameListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderGameListTableViewCell.swift; sourceTree = "<group>"; };
+		C8092F4E28CB7C17002CE3C2 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		C816027528C91EDC0051CA90 /* GameEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameEvents.storyboard; sourceTree = "<group>"; };
+		C816027728C91F2E0051CA90 /* GameEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEventsViewController.swift; sourceTree = "<group>"; };
 		C875C81E28C88AD2004F55D2 /* BeterAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeterAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C875C82128C88AD2004F55D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C875C82328C88AD2004F55D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +150,6 @@
 				A2234CF028C8E8A30000D944 /* GameListViewController.swift */,
 				A208178728CB6509003A280A /* SelectGameViewController.swift */,
 				A208178628CA5B89003A280A /* Views */,
-				C875C82528C88AD2004F55D2 /* ViewController.swift */,
 				C816027728C91F2E0051CA90 /* GameEventsViewController.swift */,
 				C8092F4E28CB7C17002CE3C2 /* ResultViewController.swift */,
 				5B7A1BDB28CA6FC50060FF4E /* HistoryViewController.swift */,
@@ -234,7 +233,7 @@
 			files = (
 				C875C82E28C88AD4004F55D2 /* LaunchScreen.storyboard in Resources */,
 				C875C82B28C88AD4004F55D2 /* Assets.xcassets in Resources */,
-				C875C82928C88AD2004F55D2 /* Main.storyboard in Resources */,
+				C875C82928C88AD2004F55D2 /* SecondScreen.storyboard in Resources */,
 				C816027628C91EDC0051CA90 /* GameEvents.storyboard in Resources */,
 				5B7A1BDA28CA6EBB0060FF4E /* History.storyboard in Resources */,
 				C875C82928C88AD2004F55D2 /* SecondScreen.storyboard in Resources */,
