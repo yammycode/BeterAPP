@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A208178828CB6509003A280A /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A208178728CB6509003A280A /* SelectGameViewController.swift */; };
 		A2234CF128C8E8A30000D944 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234CF028C8E8A30000D944 /* GameListViewController.swift */; };
 		A2E041F528C9FF940097CA57 /* HeaderGameListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E041F428C9FF940097CA57 /* HeaderGameListTableViewCell.swift */; };
 		C875C82228C88AD2004F55D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82128C88AD2004F55D2 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A208178728CB6509003A280A /* SelectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameViewController.swift; sourceTree = "<group>"; };
 		A2234CF028C8E8A30000D944 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
 		A2E041F428C9FF940097CA57 /* HeaderGameListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderGameListTableViewCell.swift; sourceTree = "<group>"; };
 		C875C81E28C88AD2004F55D2 /* BeterAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeterAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				A2234CF028C8E8A30000D944 /* GameListViewController.swift */,
+				A208178728CB6509003A280A /* SelectGameViewController.swift */,
 				A208178628CA5B89003A280A /* Views */,
 			);
 			path = ViewControllers;
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A208178828CB6509003A280A /* SelectGameViewController.swift in Sources */,
 				A2E041F528C9FF940097CA57 /* HeaderGameListTableViewCell.swift in Sources */,
 				C875C83B28C88F84004F55D2 /* Account.swift in Sources */,
 				C875C84328C89A1D004F55D2 /* Game.swift in Sources */,

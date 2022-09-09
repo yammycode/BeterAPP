@@ -31,7 +31,6 @@ final class HeaderGameListTableViewCell: UITableViewCell {
 
     
     
-    @IBAction func playButtonPressed() {
-    }
+    
     
 }

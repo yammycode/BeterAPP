@@ -3,11 +3,12 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--BETerApp-->
+        <!--Выберите матч-->
         <scene sceneID="OXY-ot-KBl">
             <objects>
                 <tableViewController id="8zn-kL-AJV" customClass="GameListViewController" customModule="BeterAPP" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +61,7 @@
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="playButtonPressed" destination="X0E-6I-aLW" eventType="touchUpInside" id="4OX-5J-QuF"/>
+                                                <segue destination="98r-bh-ylH" kind="show" id="rRX-sh-jEX"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uz4-le-Lqv">
@@ -70,16 +71,6 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбрать матч &gt;&gt;" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1V-Cl-ROJ">
-                                            <rect key="frame" x="289" y="66" width="70" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="9UD-g3-Hmy"/>
-                                                <constraint firstAttribute="height" constant="50" id="J8H-oR-Mnv"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="1td-4C-W8x">
@@ -107,7 +98,6 @@
                                         <constraint firstItem="Jls-1H-Z1P" firstAttribute="leading" secondItem="gLi-22-aFl" secondAttribute="trailing" constant="-4" id="14p-ra-GXc"/>
                                         <constraint firstItem="Jls-1H-Z1P" firstAttribute="top" secondItem="5A1-jf-dAX" secondAttribute="top" constant="3" id="9vd-mg-btC"/>
                                         <constraint firstItem="1td-4C-W8x" firstAttribute="top" secondItem="5A1-jf-dAX" secondAttribute="topMargin" constant="7" id="BTd-8T-bC6"/>
-                                        <constraint firstItem="t1V-Cl-ROJ" firstAttribute="top" secondItem="YMS-fu-cfA" secondAttribute="bottom" constant="13" id="EEE-TA-GvI"/>
                                         <constraint firstItem="uz4-le-Lqv" firstAttribute="top" secondItem="Sqz-Z6-Ok5" secondAttribute="bottom" constant="8" symbolic="YES" id="HRj-g1-HTo"/>
                                         <constraint firstItem="ME3-Yl-reQ" firstAttribute="top" secondItem="Jls-1H-Z1P" secondAttribute="bottom" constant="8" symbolic="YES" id="HeZ-5W-8AT"/>
                                         <constraint firstItem="Sqz-Z6-Ok5" firstAttribute="top" secondItem="5A1-jf-dAX" secondAttribute="top" constant="3" id="Hee-d7-JIz"/>
@@ -115,9 +105,7 @@
                                         <constraint firstAttribute="bottom" secondItem="uz4-le-Lqv" secondAttribute="bottom" constant="6" id="WcW-gC-Fnf"/>
                                         <constraint firstItem="gLi-22-aFl" firstAttribute="leading" secondItem="1td-4C-W8x" secondAttribute="trailing" constant="2" id="aHM-QX-YFq"/>
                                         <constraint firstAttribute="trailing" secondItem="YMS-fu-cfA" secondAttribute="trailing" constant="16" id="dke-5S-XgM"/>
-                                        <constraint firstAttribute="trailing" secondItem="t1V-Cl-ROJ" secondAttribute="trailing" constant="16" id="etb-KZ-Bsm"/>
                                         <constraint firstItem="gLi-22-aFl" firstAttribute="top" secondItem="5A1-jf-dAX" secondAttribute="topMargin" constant="7" id="fxB-my-fl9"/>
-                                        <constraint firstItem="t1V-Cl-ROJ" firstAttribute="leading" secondItem="ME3-Yl-reQ" secondAttribute="trailing" constant="25" id="hXu-y7-xCE"/>
                                         <constraint firstItem="YMS-fu-cfA" firstAttribute="top" secondItem="5A1-jf-dAX" secondAttribute="top" constant="3" id="rwN-DZ-rim"/>
                                         <constraint firstItem="ME3-Yl-reQ" firstAttribute="leading" secondItem="uz4-le-Lqv" secondAttribute="trailing" constant="28" id="vOx-ri-dOu"/>
                                         <constraint firstItem="1td-4C-W8x" firstAttribute="leading" secondItem="Sqz-Z6-Ok5" secondAttribute="trailing" constant="-8" id="w1f-fI-Tkj"/>
@@ -140,11 +128,133 @@
                             <outlet property="delegate" destination="8zn-kL-AJV" id="8vE-cb-kRr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="BETerApp" id="8rz-G4-61c"/>
+                    <navigationItem key="navigationItem" title="Выберите матч" id="8rz-G4-61c"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYh-wk-60c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805.60000000000002" y="147.97601199400302"/>
+            <point key="canvasLocation" x="839" y="151"/>
+        </scene>
+        <!--Select Game View Controller-->
+        <scene sceneID="tSy-t4-SAY">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="98r-bh-ylH" customClass="SelectGameViewController" customModule="BeterAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ca1-mT-QVG" customClass="Sel">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvc-6f-GXJ">
+                                <rect key="frame" x="56" y="126" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tD5-xh-do1">
+                                <rect key="frame" x="230" y="126" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="woz-FC-EHX">
+                                <rect key="frame" x="29" y="235" width="299" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Для продолжения выберите команду на которую хотите поставить, внесите сумму и нажмите &quot;Начать игру&quot;." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLl-FF-e2I">
+                                <rect key="frame" x="57" y="285" width="246" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Сумма ставки" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6E-m8-RTD">
+                                <rect key="frame" x="29" y="395" width="124" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUH-m2-CZ7">
+                                <rect key="frame" x="64" y="449" width="246" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Начать игру"/>
+                                <connections>
+                                    <action selector="startGameButtonPressed:" destination="98r-bh-ylH" eventType="touchUpInside" id="353-Hq-xYg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="teamTwo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1I-bc-WM1">
+                                <rect key="frame" x="231" y="95" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="teamOne" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHq-PV-jW3">
+                                <rect key="frame" x="56" y="96" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frK-dM-4BA">
+                                <rect key="frame" x="255" y="356" width="20" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.55279357054016809" green="0.55279357054016809" blue="0.55279357054016809" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="questionmark.app.fill" catalog="system"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="rait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJI-0T-Bvm">
+                                <rect key="frame" x="79" y="204" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Ll-iO-TaO">
+                                <rect key="frame" x="182" y="400" width="166" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="rait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfQ-Tn-pwb">
+                                <rect key="frame" x="253" y="204" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Выберите команду" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ys1-tJ-cVF">
+                                <rect key="frame" x="102" y="51" width="152" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KUS-Z8-3sw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="JBX-mb-zKI">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="5wk-TV-9pB">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="98r-bh-ylH" id="oGC-SG-xDK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="betSlider" destination="5Ll-iO-TaO" id="2Cz-JR-5w0"/>
+                        <outlet property="raitingTeamOneLabel" destination="XJI-0T-Bvm" id="ER7-nA-KbL"/>
+                        <outlet property="raitingTeamTwoLabel" destination="GfQ-Tn-pwb" id="7fG-Z7-mGh"/>
+                        <outlet property="selectTeamSegmentedControl" destination="woz-FC-EHX" id="PWl-oI-A25"/>
+                        <outlet property="teamOneImageView" destination="tvc-6f-GXJ" id="GIH-WZ-ocS"/>
+                        <outlet property="teamOneLabel" destination="pHq-PV-jW3" id="zEh-Nx-qEc"/>
+                        <outlet property="teamTwoImageView" destination="tD5-xh-do1" id="9SF-LT-HOy"/>
+                        <outlet property="teamTwoLabel" destination="A1I-bc-WM1" id="PwK-gR-6cF"/>
+                        <outlet property="userBetTF" destination="d6E-m8-RTD" id="vfy-5d-eZV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dpx-4e-efB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="151"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iza-Bk-wHw">
@@ -165,6 +275,7 @@
     </scenes>
     <resources>
         <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="questionmark.app.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
