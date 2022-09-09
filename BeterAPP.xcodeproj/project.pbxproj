@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B7A1BDA28CA6EBB0060FF4E /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B7A1BD928CA6EBB0060FF4E /* History.storyboard */; };
+		5B7A1BDC28CA6FC50060FF4E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A1BDB28CA6FC50060FF4E /* HistoryViewController.swift */; };
+		5B7A1BDF28CA704B0060FF4E /* HeaderHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A1BDE28CA704B0060FF4E /* HeaderHistoryTableViewCell.swift */; };
 		C875C82228C88AD2004F55D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82128C88AD2004F55D2 /* AppDelegate.swift */; };
 		C875C82428C88AD2004F55D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82328C88AD2004F55D2 /* SceneDelegate.swift */; };
 		C875C82628C88AD2004F55D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82528C88AD2004F55D2 /* ViewController.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B7A1BD928CA6EBB0060FF4E /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		5B7A1BDB28CA6FC50060FF4E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		5B7A1BDE28CA704B0060FF4E /* HeaderHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		C875C81E28C88AD2004F55D2 /* BeterAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeterAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C875C82128C88AD2004F55D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C875C82328C88AD2004F55D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B7A1BDD28CA70190060FF4E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5B7A1BDE28CA704B0060FF4E /* HeaderHistoryTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C875C81528C88AD2004F55D2 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +80,7 @@
 		C875C82028C88AD2004F55D2 /* BeterAPP */ = {
 			isa = PBXGroup;
 			children = (
+				5B7A1BDD28CA70190060FF4E /* Views */,
 				C875C83528C88B22004F55D2 /* Models */,
 				C875C83828C88B7A004F55D2 /* ViewControllers */,
 				C875C83928C88F56004F55D2 /* Services */,
@@ -92,6 +107,7 @@
 			children = (
 				C875C82728C88AD2004F55D2 /* Main.storyboard */,
 				C875C82C28C88AD4004F55D2 /* LaunchScreen.storyboard */,
+				5B7A1BD928CA6EBB0060FF4E /* History.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -110,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				C875C82528C88AD2004F55D2 /* ViewController.swift */,
+				5B7A1BDB28CA6FC50060FF4E /* HistoryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -183,6 +200,7 @@
 				C875C82E28C88AD4004F55D2 /* LaunchScreen.storyboard in Resources */,
 				C875C82B28C88AD4004F55D2 /* Assets.xcassets in Resources */,
 				C875C82928C88AD2004F55D2 /* Main.storyboard in Resources */,
+				5B7A1BDA28CA6EBB0060FF4E /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +215,10 @@
 				C875C83B28C88F84004F55D2 /* Account.swift in Sources */,
 				C875C84328C89A1D004F55D2 /* Game.swift in Sources */,
 				C875C82228C88AD2004F55D2 /* AppDelegate.swift in Sources */,
+				5B7A1BDF28CA704B0060FF4E /* HeaderHistoryTableViewCell.swift in Sources */,
 				C875C83F28C8919C004F55D2 /* DataStore.swift in Sources */,
 				C875C82428C88AD2004F55D2 /* SceneDelegate.swift in Sources */,
+				5B7A1BDC28CA6FC50060FF4E /* HistoryViewController.swift in Sources */,
 				C875C84528C89BE7004F55D2 /* GameEvent.swift in Sources */,
 				C875C84128C899B9004F55D2 /* TeamInGame.swift in Sources */,
 			);
