@@ -8,8 +8,11 @@
 import Foundation
 
 struct Game {
+
     let teamOne: TeamInGame
     let teamTwo: TeamInGame
+    
+    
     // Сюда будем записывать забитые командой мячи
     var teamOneScore = 0
     var teamTwoScore = 0
@@ -54,12 +57,12 @@ extension Game {
             }
             let game = Game(
                 teamOne: TeamInGame(team: teams[teamIndex], rating: getRandomRating()),
-                teamTwo: TeamInGame(team: teams[teamIndex + 1], rating: getRandomRating())
+                teamTwo: TeamInGame(team: teams[teamIndex+1], rating: getRandomRating())
             )
-
+            
             games.append(game)
         }
-
+        
         return games
     }
 
