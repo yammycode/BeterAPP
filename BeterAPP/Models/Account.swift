@@ -5,7 +5,7 @@
 //  Created by Anton Saltykov on 07.09.2022.
 //
 
-public struct Account {
+struct Account {
     let userName: String
     var history: [Game] = []
     var budget = 0.0
