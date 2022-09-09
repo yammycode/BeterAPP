@@ -7,12 +7,14 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+final class HeaderGameListTableViewCell: UITableViewCell {
 
     
     @IBOutlet var teamOneLabel: UILabel!
     @IBOutlet var teamTwoLabel: UILabel!
-    @IBOutlet var raitingLabel: UILabel!
+    
+    @IBOutlet var raitingTeamOneLabel: UILabel!
+    @IBOutlet var raitingTeamTwoLabel: UILabel!
     
     
     @IBOutlet var teamOneImageView: UIImageView!

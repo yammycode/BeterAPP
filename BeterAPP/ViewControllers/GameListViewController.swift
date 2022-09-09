@@ -1,16 +1,10 @@
-//
-//  GameListViewController.swift
-//  BeterAPP
-//
-//  Created by Юлия on 07.09.2022.
-//
 
 import UIKit
 
-class GameListViewController: UITableViewController {
+final class GameListViewController: UITableViewController {
     
-    private var gameList = Game.getGames()
-  
+    private let gameList = Game.getGames()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 130
@@ -18,24 +12,36 @@ class GameListViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        1
+//    }
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         gameList.count
         
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard  let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath)
-                as? CustomTableViewCell else { return UITableViewCell() }
+        guard  let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
+                as? HeaderGameListTableViewCell else { return UITableViewCell() }
 
+        
+        let teamInGame = TeamInGame(team: .ahmat, rating: 1.5)
+        
         let game = gameList[indexPath.row]
-        cell.teamOneLabel.text = game.teamOne?.team.rawValue
-        cell.teamTwoLabel.text = game.teamTwo?.team.rawValue
-        cell.teamOneImageView.image = UIImage(named: String(describing: game.teamOne?.team))
-        cell.teamTwoImageView.image = UIImage(named: String(describing: game.teamTwo?.team))
+        cell.teamOneLabel.text = game.teamOne.team.rawValue
+        cell.teamTwoLabel.text = game.teamTwo.team.rawValue
+        
+        cell.raitingTeamOneLabel.text = String(describing: teamInGame.rating )
+        cell.raitingTeamTwoLabel.text = String(describing: teamInGame.rating)
+        
+        cell.teamOneImageView.image = UIImage(named: String(describing: game.teamOne.team))
+        cell.teamTwoImageView.image = UIImage(named: String(describing: game.teamTwo.team))
 
         return cell
     }
+
     
     //MARK: - Table View Delegate
     
@@ -44,6 +50,4 @@ class GameListViewController: UITableViewController {
         _ = gameList[indexPath.row]
     }
 }
-    
-
     
