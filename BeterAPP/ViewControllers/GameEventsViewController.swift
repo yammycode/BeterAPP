@@ -10,11 +10,10 @@ import UIKit
 final class GameEventsViewController: UITableViewController {
 
 
-    let games = Game.getGames()
+    var games: [Game]!
+    var gameIndex = 0
     var game: Game!
-    let account = Account(userName: "test", history: [], budget: 1000)
-
-
+    var account: Account!
 
     /// Общее время матча
     private let gameTime = 10
@@ -31,9 +30,7 @@ final class GameEventsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        game = games.first
-        game.betValue = 100
-        game.betTeam = game.teamOne.team
+        game = games[gameIndex]
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -45,6 +42,7 @@ final class GameEventsViewController: UITableViewController {
         guard let resultVC = segue.destination as? ResultViewController else { return }
         resultVC.games = games
         resultVC.game = game
+        resultVC.account = account
     }
 
     // MARK: - Table view data source

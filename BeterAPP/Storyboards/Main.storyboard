@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,54 +8,128 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First Screen View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="FirstScreenViewController" customModule="BeterAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6H-Ih-JiD">
-                                <rect key="frame" x="174" y="433" width="67" height="31"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQV-Tj-ZQ5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <segue destination="n27-vK-O7M" kind="presentation" modalPresentationStyle="fullScreen" id="odI-Ma-q4C"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODA-dN-DV3">
+                                        <rect key="frame" x="0.0" y="-44" width="375" height="745"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="y8h-ej-M10">
+                                                <rect key="frame" x="47.5" y="201.5" width="280.5" height="342.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="tDt-eA-JUh">
+                                                        <rect key="frame" x="16.5" y="0.0" width="247" height="47"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyP-Hf-5Dr">
+                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="47"/>
+                                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="47"/>
+                                                                <color key="textColor" red="0.76864023699999995" green="0.64291384529999995" blue="0.22502504209999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="er" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VH-R2-94E">
+                                                                <rect key="frame" x="111" y="0.0" width="27" height="47"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="30"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6n-Ni-ieo">
+                                                                <rect key="frame" x="139" y="0.0" width="108" height="47"/>
+                                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="47"/>
+                                                                <color key="textColor" red="0.76864023699999995" green="0.64291384529999995" blue="0.22502504209999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Loh-Q8-6bD">
+                                                        <rect key="frame" x="0.0" y="76" width="280.5" height="137.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="ahj-nf-M92"/>
+                                                        </constraints>
+                                                        <string key="text">Добро пожаловать в тотализатор BETterAPP! Делайте ставки, следите за ходом матча в реальном времени, просматривайте историю игр и просто получайте удовольствие! В качестве бонуса вам на счет зачислен приветственный допозит:</string>
+                                                        <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.000$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNG-sd-Vec">
+                                                        <rect key="frame" x="73.5" y="242.5" width="133" height="40"/>
+                                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="40"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1c-6u-hif">
+                                                        <rect key="frame" x="85.5" y="311.5" width="109" height="31"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Продолжить">
+                                                            <color key="baseBackgroundColor" red="0.76864023699999995" green="0.64291384529999995" blue="0.22502504209999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <segue destination="SYq-dY-EnH" kind="presentation" modalPresentationStyle="fullScreen" id="mKv-l0-iBj"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Над проектом работали: Антон Салтыков, Алексей Зямин, Юлия Семенюк и Кирилл Запрудский " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw2-h3-jnx">
+                                                <rect key="frame" x="16" y="666.5" width="343" height="36.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Jw2-h3-jnx" firstAttribute="leading" secondItem="ODA-dN-DV3" secondAttribute="leading" constant="16" id="4pc-dh-xr0"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jw2-h3-jnx" secondAttribute="trailing" constant="16" id="DXQ-8O-pF6"/>
+                                            <constraint firstItem="y8h-ej-M10" firstAttribute="centerX" secondItem="ODA-dN-DV3" secondAttribute="centerX" id="ert-c2-8BW"/>
+                                            <constraint firstItem="y8h-ej-M10" firstAttribute="centerY" secondItem="ODA-dN-DV3" secondAttribute="centerY" id="oTw-zS-5ZX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="ODA-dN-DV3" secondAttribute="top" constant="44" id="5jK-EN-Cf0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Jw2-h3-jnx" secondAttribute="bottom" constant="8" id="9YS-16-hDw"/>
+                            <constraint firstItem="ODA-dN-DV3" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="34" id="ALU-uf-QT9"/>
+                            <constraint firstItem="ODA-dN-DV3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Zu1-I0-YYe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ODA-dN-DV3" secondAttribute="trailing" id="dSC-X3-ffv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="baseWindow" destination="ODA-dN-DV3" id="AJw-0z-BaB"/>
+                        <outlet property="videoView" destination="gQV-Tj-ZQ5" id="6hZ-6k-LLi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-622" y="75"/>
+            <point key="canvasLocation" x="-164" y="67"/>
         </scene>
-        <!--navigationSID-->
-        <scene sceneID="Ej7-Pg-Yg4">
+        <!--secondSID-->
+        <scene sceneID="8B7-ip-zg4">
             <objects>
-                <viewControllerPlaceholder storyboardName="GameEvents" referencedIdentifier="navigationSID" id="n27-vK-O7M" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="npW-mD-B5k"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qit-lx-2cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="SecondScreen" referencedIdentifier="secondSID" id="SYq-dY-EnH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1a-h4-SC9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="75"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="f3x-At-xaX">
-            <objects>
-                <viewControllerPlaceholder id="8ke-bW-SoA" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QmW-bQ-6Cq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-620" y="88"/>
+            <point key="canvasLocation" x="373" y="67"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -97,7 +97,7 @@
         <!--Navigation Controller-->
         <scene sceneID="YdX-9y-E0G">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FrO-ud-Sld" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="historySID" automaticallyAdjustsScrollViewInsets="NO" id="FrO-ud-Sld" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Dl8-dN-4ld">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
