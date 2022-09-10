@@ -16,21 +16,26 @@ final class HeaderGameListTableViewCell: UITableViewCell {
     @IBOutlet var raitingTeamOneLabel: UILabel!
     @IBOutlet var raitingTeamTwoLabel: UILabel!
     
-    
     @IBOutlet var teamOneImageView: UIImageView!
     @IBOutlet var teamTwoImageView: UIImageView!
     
+    @IBOutlet var teamCheckButton: UIButton!
+
+    @IBOutlet var ratingTitleLabel: UILabel!
     
+    var delegate: GameItemCellDelegator!
+
     override func awakeFromNib() {
-       // super.awakeFromNib()
-        // Initialization code
+
     }
 
     //MARK: - UITableViewDelegate
     
+    @IBAction func teamCheckButtonPressed(_ sender: Any) {
+        let index = (sender as AnyObject).tag ?? 0
+        guard let delegate = delegate else { return }
+        delegate.callSegueFromCell(gameIndex: index)
+       }
+    }
+    
 
-    
-    
-    
-    
-}

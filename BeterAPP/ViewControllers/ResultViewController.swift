@@ -19,20 +19,36 @@ final class ResultViewController: UIViewController {
 
     @IBOutlet var resultTitleLabel: UILabel!
     @IBOutlet var resultTextLabel: UILabel!
-    
 
     var games: [Game]!
     var game: Game!
+    var deltaForBudget: Double?
     var account: Account!
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.setHidesBackButton(true, animated: false)
+
+        if game.isUserWin {
+            view.backgroundColor = UIColor(red: 0.95, green: 1, blue: 0.95, alpha: 1.0)
+        } else {
+            view.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.95, alpha: 1.0)
+        }
+
         updateGames()
         setTeamsData()
         setInfoText()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let mainTabBarVC = segue.destination as? MainTabBarViewController else { return }
+        mainTabBarVC.games = games
+        account.budget += deltaForBudget ?? 0
+        mainTabBarVC.account = account
+    }
+
+    
 
     private func setTeamsData() {
         teamOneLabel.text = game.teamOne.team.rawValue
@@ -57,10 +73,13 @@ final class ResultViewController: UIViewController {
                 resultTitleLabel.text = "Поздравляем!"
                 resultTitleLabel.textColor = .systemGreen
                 resultTextLabel.text = "Вы поставили \(getFormattedBet(gameBetValue))$ и выиграли \(getFormattedBet(betRatingSum))$."
+                deltaForBudget = betRatingSum
+
             } else {
                 resultTitleLabel.text = "Вы проиграли!"
                 resultTitleLabel.textColor = .red
                 resultTextLabel.text = "Вы поставили \(getFormattedBet(gameBetValue))$ и проиграли."
+                deltaForBudget = -gameBetValue
             }
 
         }
@@ -69,17 +88,7 @@ final class ResultViewController: UIViewController {
     private func getFormattedBet(_ value: Double) -> String {
         String(format: "%.0f", value)
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

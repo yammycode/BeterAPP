@@ -6,15 +6,5 @@
 //
 
 struct Account {
-    let userName: String
-    var history: [Game] = []
     var budget = 0.0
-
-}
-
-extension Account {
-    // Это временный метод пока не соберем все вместе
-    static func getFakeAccount() -> Account {
-        Account(userName: "TestUser", history: [], budget: 100)
-    }
 }

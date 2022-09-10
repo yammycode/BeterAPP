@@ -16,26 +16,46 @@ final class SelectGameViewController: UIViewController {
     
     @IBOutlet var teamOneImageView: UIImageView!
     @IBOutlet var teamTwoImageView: UIImageView!
-    
-    
+
     @IBOutlet var raitingTeamOneLabel: UILabel!
     @IBOutlet var raitingTeamTwoLabel: UILabel!
     
     @IBOutlet var selectTeamSegmentedControl: UISegmentedControl!
-    
-    
+
     @IBOutlet var userBetTF: UITextField!
-    
     @IBOutlet var betSlider: UISlider!
     
-    
-  private  let game = Game.getGames()
+    var games: [Game]!
+    var gameIndex = 0
+    var game: Game!
+
+    var teamChecked: Team!
+    var account: Account!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        game = games[gameIndex]
+        teamChecked = game.teamOne.team
         transmitData()
 
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let gameEvensNavigationVC = segue.destination as? UINavigationController else { return }
+        guard let gameEventsVC = gameEvensNavigationVC.topViewController as? GameEventsViewController else { return }
+
+        games[gameIndex].betTeam = game.teamOne.team
+
+        guard let betSumInput = userBetTF.text else { return }
+        
+        games[gameIndex].betValue = Double(betSumInput) ?? 0
+        games[gameIndex].betTeam = teamChecked
+
+        gameEventsVC.games = games
+        gameEventsVC.gameIndex = gameIndex
+        gameEventsVC.account = account
+    }
+
     // MARK: - @IBAction
     
     @IBAction func backButtonPressed() {
@@ -46,12 +66,12 @@ final class SelectGameViewController: UIViewController {
     }
     
     @IBAction func selectSegmentalControl() {
+        teamChecked = selectTeamSegmentedControl.selectedSegmentIndex == 0 ? game.teamOne.team : game.teamTwo.team
     }
     
     @IBAction func betSliderAction() {
         userBetTF.text = String(format: "%.2ff", betSlider.value)
     }
-    
     
     @IBAction func startGameButtonPressed() {
     }
@@ -60,20 +80,15 @@ final class SelectGameViewController: UIViewController {
     // MARK: - Function
     
    private func transmitData() {
+
+       teamOneLabel.text = game.teamOne.team.rawValue
+       teamTwoLabel.text = game.teamTwo.team.rawValue
+
+       teamOneImageView.image = UIImage(named: String(describing: game.teamOne.team))
+       teamTwoImageView.image = UIImage(named: String(describing: game.teamTwo.team))
        
-        
-     //  let gameList = game[index]
-        
-//       teamOneLabel.text = gameList.teamOne.team.rawValue
-//       teamTwoLabel.text = gameList.teamTwo.team.rawValue
-//       
-//       teamOneImageView.image = UIImage(named: String(describing: gameList.teamOne.team))
-//       teamTwoImageView.image = UIImage(named: String(describing: gameList.teamTwo.team))
-       
-  //     raitingTeamOneLabel.text = String(describing: teamInGame.raitig)
-   //    raitingTeamTwoLabel.text = String(describing: teamInGame.raitig)
-       
-       
+       raitingTeamOneLabel.text = String(game.teamOne.rating)
+       raitingTeamTwoLabel.text = String(game.teamTwo.rating)
        
     }
     
