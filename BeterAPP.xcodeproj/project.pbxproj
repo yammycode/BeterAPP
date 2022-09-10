@@ -16,6 +16,7 @@
 		C8092F4F28CB7C17002CE3C2 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8092F4E28CB7C17002CE3C2 /* ResultViewController.swift */; };
 		C816027628C91EDC0051CA90 /* GameEvents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C816027528C91EDC0051CA90 /* GameEvents.storyboard */; };
 		C816027828C91F2E0051CA90 /* GameEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C816027728C91F2E0051CA90 /* GameEventsViewController.swift */; };
+		C8484EEA28CBD0B9003BF196 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8484EE928CBD0B9003BF196 /* Main.storyboard */; };
 		C875C82228C88AD2004F55D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82128C88AD2004F55D2 /* AppDelegate.swift */; };
 		C875C82428C88AD2004F55D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82328C88AD2004F55D2 /* SceneDelegate.swift */; };
 		C875C82928C88AD2004F55D2 /* SecondScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875C82728C88AD2004F55D2 /* SecondScreen.storyboard */; };
@@ -39,6 +40,7 @@
 		C8092F4E28CB7C17002CE3C2 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		C816027528C91EDC0051CA90 /* GameEvents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameEvents.storyboard; sourceTree = "<group>"; };
 		C816027728C91F2E0051CA90 /* GameEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEventsViewController.swift; sourceTree = "<group>"; };
+		C8484EE928CBD0B9003BF196 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C875C81E28C88AD2004F55D2 /* BeterAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeterAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C875C82128C88AD2004F55D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C875C82328C88AD2004F55D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,10 +128,11 @@
 		C875C83628C88B32004F55D2 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				C8484EE928CBD0B9003BF196 /* Main.storyboard */,
 				C875C82728C88AD2004F55D2 /* SecondScreen.storyboard */,
-				C875C82C28C88AD4004F55D2 /* LaunchScreen.storyboard */,
 				C816027528C91EDC0051CA90 /* GameEvents.storyboard */,
 				5B7A1BD928CA6EBB0060FF4E /* History.storyboard */,
+				C875C82C28C88AD4004F55D2 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8484EEA28CBD0B9003BF196 /* Main.storyboard in Resources */,
 				C875C82E28C88AD4004F55D2 /* LaunchScreen.storyboard in Resources */,
 				C875C82B28C88AD4004F55D2 /* Assets.xcassets in Resources */,
 				C875C82928C88AD2004F55D2 /* SecondScreen.storyboard in Resources */,
@@ -413,7 +417,7 @@
 				INFOPLIST_FILE = BeterAPP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SecondScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -442,7 +446,7 @@
 				INFOPLIST_FILE = BeterAPP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SecondScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
