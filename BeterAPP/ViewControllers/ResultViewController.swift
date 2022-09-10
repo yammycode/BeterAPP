@@ -73,7 +73,7 @@ final class ResultViewController: UIViewController {
                 resultTitleLabel.text = "Поздравляем!"
                 resultTitleLabel.textColor = .systemGreen
                 resultTextLabel.text = "Вы поставили \(getFormattedBet(gameBetValue))$ и выиграли \(getFormattedBet(betRatingSum))$."
-                deltaForBudget = betRatingSum
+                deltaForBudget = betRatingSum - gameBetValue
 
             } else {
                 resultTitleLabel.text = "Вы проиграли!"
