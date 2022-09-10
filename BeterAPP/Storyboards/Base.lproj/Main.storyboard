@@ -15,21 +15,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZk-9y-BiA">
+                                <rect key="frame" x="173.5" y="432.5" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <segue destination="gam-Dh-UnO" kind="presentation" modalPresentationStyle="fullScreen" id="Y8i-EK-g1w"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xZk-9y-BiA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2n8-IB-9A0"/>
+                            <constraint firstItem="xZk-9y-BiA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fZK-pe-uIY"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="55Z-VK-hdd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="47"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="109.82142857142857"/>
         </scene>
-        <!--History-->
-        <scene sceneID="fnQ-cu-GXO">
+        <!--navigationSID-->
+        <scene sceneID="Ywp-hY-9SR">
             <objects>
-                <viewControllerPlaceholder storyboardName="History" referencedIdentifier="History" id="udD-oh-PxL" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JJo-6H-GYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="GameEvents" referencedIdentifier="navigationSID" id="gam-Dh-UnO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ilx-sf-aO6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFS-Jn-M0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="-171"/>
+            <point key="canvasLocation" x="1755.072463768116" y="109.82142857142857"/>
         </scene>
     </scenes>
     <resources>

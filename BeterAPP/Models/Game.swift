@@ -22,20 +22,23 @@ struct Game {
     // По этому параметру будем определять, что матч состоялся
     var betTeam: Team?
 
-    var winner: Team? {
-        // Это мне, реализовать когда буду делать 4 экран
-        return nil
+    var winner: TeamInGame? {
+
+        if teamOneScore == teamTwoScore { return nil }
+
+        return teamOneScore > teamTwoScore ? teamOne : teamTwo
+
     }
 
     // Внимание кто будет делать экран 5!
     // Здесь надо обработать случай с ничьей (то есть матч состоялся, но счет равен).
     // В этом случае тоже нужно вернуть false
     // Логику можно переделать, главное чтобы возвращался nil если матч не состоялся и true / false если состоялся
-    var isUserWin: Bool? {
-        if winner == nil || betTeam == nil {
-            return nil
+    var isUserWin: Bool {
+        if winner?.team == nil || betTeam == nil {
+            return false
         }
-        return winner == betTeam
+        return winner?.team == betTeam
     }
 
 
