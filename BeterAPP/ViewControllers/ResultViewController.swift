@@ -32,7 +32,7 @@ final class ResultViewController: UIViewController {
 
         if game.isUserWin {
             view.backgroundColor = UIColor(red: 0.95, green: 1, blue: 0.95, alpha: 1.0)
-        } else {
+        } else if game.teamOneScore != game.teamTwoScore {
             view.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.95, alpha: 1.0)
         }
 
