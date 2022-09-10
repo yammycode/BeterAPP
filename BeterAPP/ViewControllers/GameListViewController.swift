@@ -21,7 +21,7 @@ final class GameListViewController: UITableViewController {
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
                 as? HeaderGameListTableViewCell else { return UITableViewCell() }
 
-        
+       
         let teamInGame = TeamInGame(team: .ahmat, rating: 1.5)
         
         let game = gameList[indexPath.row]

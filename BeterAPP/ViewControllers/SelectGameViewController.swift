@@ -26,15 +26,14 @@ final class SelectGameViewController: UIViewController {
     
     @IBOutlet var userBetTF: UITextField!
     
-    
     @IBOutlet var betSlider: UISlider!
     
     
-    let game = Game.getGames()
+  private  let game = Game.getGames()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        transmitData()
 
     }
     // MARK: - @IBAction
@@ -42,15 +41,57 @@ final class SelectGameViewController: UIViewController {
     @IBAction func backButtonPressed() {
     }
     
+    @IBAction func helpButtonPressed() {
+        showAlert(title: "Внимание!", message: "Введите целое число больше 0. Сумма ставки не должны превышать сумму текущего баланса")
+    }
+    
+    @IBAction func selectSegmentalControl() {
+    }
+    
+    @IBAction func betSliderAction() {
+        userBetTF.text = String(format: "%.2ff", betSlider.value)
+    }
+    
+    
     @IBAction func startGameButtonPressed() {
     }
     
     
     // MARK: - Function
     
-    func transmitData() {
-       //
+   private func transmitData() {
+       
+        
+     //  let gameList = game[index]
+        
+//       teamOneLabel.text = gameList.teamOne.team.rawValue
+//       teamTwoLabel.text = gameList.teamTwo.team.rawValue
+//       
+//       teamOneImageView.image = UIImage(named: String(describing: gameList.teamOne.team))
+//       teamTwoImageView.image = UIImage(named: String(describing: gameList.teamTwo.team))
+       
+  //     raitingTeamOneLabel.text = String(describing: teamInGame.raitig)
+   //    raitingTeamTwoLabel.text = String(describing: teamInGame.raitig)
+       
+       
+       
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    // MARK: - UIAlertController
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
     
     //MARK: - Navigation
     
