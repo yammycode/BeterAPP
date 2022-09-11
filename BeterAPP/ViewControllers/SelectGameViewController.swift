@@ -24,19 +24,26 @@ final class SelectGameViewController: UIViewController {
 
     @IBOutlet var userBetTF: UITextField!
     @IBOutlet var betSlider: UISlider!
+
+    // MARK: - Properties
     
     var games: [Game]!
     var gameIndex = 0
     var game: Game!
-
     var teamChecked: Team!
     var account: Account!
     
+    // MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         game = games[gameIndex]
         teamChecked = game.teamOne.team
+        betSlider.maximumValue = Float(account.budget)
+
         transmitData()
+        setSelectedTeamColor()
+
+        userBetTF.delegate = self
 
     }
 
@@ -56,28 +63,58 @@ final class SelectGameViewController: UIViewController {
         gameEventsVC.account = account
     }
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+
+        if userBetTF.text == "" {
+            showAlert(title: "Введите сумму ставки", message: "Необходимо ввести сумму ставки на команду")
+            return false
+        }
+
+        guard let betValue = Int(userBetTF.text ?? "0") else {
+            showAlert(title: "Некорректное значение", message: "Необходимо ввести сумму ставки на команду в виде целого числа")
+            return false
+        }
+
+        if betValue <= 0 || Double(betValue) > account.budget {
+            showAlert(title: "Недопустимое значение", message: "Сумма ставки долна быть от 0 до \(account.budget)$")
+            return false
+        }
+
+        return true
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+
     // MARK: - @IBAction
-    
-    @IBAction func backButtonPressed() {
-    }
-    
-    @IBAction func helpButtonPressed() {
-        showAlert(title: "Внимание!", message: "Введите целое число больше 0. Сумма ставки не должны превышать сумму текущего баланса")
-    }
-    
     @IBAction func selectSegmentalControl() {
         teamChecked = selectTeamSegmentedControl.selectedSegmentIndex == 0 ? game.teamOne.team : game.teamTwo.team
+        setSelectedTeamColor()
     }
     
     @IBAction func betSliderAction() {
-        userBetTF.text = String(format: "%.2ff", betSlider.value)
-    }
-    
-    @IBAction func startGameButtonPressed() {
+        userBetTF.text = String(format: "%.0f", betSlider.value)
     }
     
     
-    // MARK: - Function
+    // MARK: - private functions
+    private func setSelectedTeamColor() {
+        if selectTeamSegmentedControl.selectedSegmentIndex == 0 {
+            teamOneLabel.textColor = UIColor(red: 196/255, green: 164/255, blue: 57/255, alpha: 1)
+            raitingTeamOneLabel.textColor = UIColor(red: 196/255, green: 164/255, blue: 57/255, alpha: 1)
+
+            teamTwoLabel.textColor = .black
+            raitingTeamTwoLabel.textColor = .black
+        } else {
+            teamTwoLabel.textColor = UIColor(red: 196/255, green: 164/255, blue: 57/255, alpha: 1)
+            raitingTeamTwoLabel.textColor = UIColor(red: 196/255, green: 164/255, blue: 57/255, alpha: 1)
+
+            teamOneLabel.textColor = .black
+            raitingTeamOneLabel.textColor = .black
+        }
+    }
     
    private func transmitData() {
 
@@ -91,29 +128,29 @@ final class SelectGameViewController: UIViewController {
        raitingTeamTwoLabel.text = String(game.teamTwo.rating)
        
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    
-    // MARK: - UIAlertController
-    
+}
+
+extension SelectGameViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.userBetTF.text = String(format: "%.0f", self.account.budget)
+            self.betSlider.value = Float(self.account.budget)
+        }
+
+
         alert.addAction(okAction)
         present(alert, animated: true)
     }
-    
-    
-    //MARK: - Navigation
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let gameEventsVC = segue.destination as? GameEventsViewController else { return }
-//        gameEventsVC.game.betTeam = betTeam
-//        gameEventsVC.game.betValue = betValue
-//    }
 }
 
+// MARK: - connect TextField And Slider
+extension SelectGameViewController: UITextFieldDelegate {
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let newValue = textField.text else { return }
+        guard let numberValue = Int(newValue) else { return }
+        betSlider.value = Float(numberValue)
+    }
+
+}
