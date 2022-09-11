@@ -7,55 +7,84 @@
 
 import UIKit
 
-class HistoreViewController: UITableViewController {
+final class HistoreViewController: UITableViewController {
     
     var gameList: [Game]!
     var gamesWithResults: [Game] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for game in gameList {
-            if game.betTeam != nil {
-                gamesWithResults.append(game)
-            }
-        }
+        getDoneGames()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        gamesWithResults.count
+        gamesWithResults.isEmpty ? 1 : gamesWithResults.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        gamesWithResults.isEmpty ? 1 : 5
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Infos", for: indexPath)
-        
-        let game = gamesWithResults[indexPath.section]
-        let score = ("\(game.teamOneScore) : \(game.teamTwoScore)")
         var content = cell.defaultContentConfiguration()
-        
-        
-        switch indexPath.row {
-        case 0:
-            content.text = ("На команду \(game.betTeam?.rawValue ?? "")")
-            content.secondaryText = ("Поставили: \(game.betValue ?? 0)")
-        case 1:
-            content.text = score
-        default:
-            content.text = ("Коэффициент команды \(game.teamOne.team.rawValue): \(game.teamOne.rating), коэффициент команды \(game.teamTwo.team.rawValue): \(game.teamTwo.rating)")
+
+        if gamesWithResults.isEmpty {
+            content.text = "Нет завершенных матчей"
+            content.secondaryText = "Здесь будет выведена история завершенных матчей. Возвращайтесь на эту страницу, когда будет сыгран хотя бы один матч."
+            content.image = UIImage(systemName: "info.circle")?.withTintColor(.orange, renderingMode: .alwaysOriginal)
+        } else {
+            let game = gamesWithResults[indexPath.section]
+            let score = ("\(game.teamOneScore) : \(game.teamTwoScore)")
+
+            switch indexPath.row {
+            case 0:
+                content.text = "Счет матча"
+                content.secondaryText = score
+            case 1:
+                content.text = ("Ставка на команду \(game.betTeam?.rawValue ?? "")")
+                content.secondaryText = ("\(game.betValue ?? 0)$")
+            case 2:
+                content.text = "Коэффициент на \(game.teamOne.team.rawValue)"
+                content.secondaryText = "\(game.teamOne.rating)"
+            case 3:
+                content.text = "Коэффициент на \(game.teamTwo.team.rawValue)"
+                content.secondaryText = "\(game.teamTwo.rating)"
+            case 4:
+
+                if game.teamOneScore == game.teamTwoScore {
+                    content.text = "Ничья"
+                } else {
+                    guard let winner = game.winner, let gameBetValue = game.betValue else { break }
+
+                    if game.isUserWin {
+                        content.text = "Вы выиграли"
+                        content.secondaryText = getFormattedBet(winner.rating * (game.betValue ?? 1)) + "$"
+                    } else {
+                        content.text = "Вы проиграли"
+                        content.secondaryText = "-\(getFormattedBet(winner.rating * gameBetValue))$"
+                    }
+                }
+
+            default:
+                break
+            }
         }
+
         cell.contentConfiguration = content
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        if gamesWithResults.isEmpty {
+            return nil
+        }
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "headerInfos") as? HeaderHistoryTableViewCell
-        
         
         cell?.teamOneLabel.text = gamesWithResults[section].teamOne.team.rawValue
         cell?.teamTwoLabel.text = gamesWithResults[section].teamTwo.team.rawValue
@@ -63,25 +92,28 @@ class HistoreViewController: UITableViewController {
         cell?.teamOneImage.image = UIImage(named: String(describing: gamesWithResults[section].teamOne.team))
         
         if gamesWithResults[section].isUserWin {
-            cell?.backgroundColor = .green
+            cell?.backgroundColor = UIColor(red: 0.95, green: 1, blue: 0.95, alpha: 1.0)
         } else if gamesWithResults[section].winner == nil {
-            cell?.backgroundColor = .gray
+            cell?.backgroundColor = .white
         } else {
-            cell?.backgroundColor = .red
+            cell?.backgroundColor = UIColor(red: 1, green: 0.95, blue: 0.95, alpha: 1.0)
         }
 
         
         return cell
     }
-  
-    //MARK: - allert
-    
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        
-        alert.addAction(okAction)
-        present(alert, animated: true)
+
+    private func getDoneGames() {
+        for game in gameList {
+            if game.betTeam != nil {
+                gamesWithResults.append(game)
+            }
+        }
     }
+
+    private func getFormattedBet(_ value: Double) -> String {
+        String(format: "%.2f", value)
+    }
+
 }
 

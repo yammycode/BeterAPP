@@ -38,6 +38,8 @@ final class SelectGameViewController: UIViewController {
         teamChecked = game.teamOne.team
         transmitData()
 
+        setSelectedTeamColor()
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,15 +60,13 @@ final class SelectGameViewController: UIViewController {
 
     // MARK: - @IBAction
     
-    @IBAction func backButtonPressed() {
-    }
-    
-    @IBAction func helpButtonPressed() {
-        showAlert(title: "Внимание!", message: "Введите целое число больше 0. Сумма ставки не должны превышать сумму текущего баланса")
-    }
+//    @IBAction func helpButtonPressed() {
+//        showAlert(title: "Внимание!", message: "Введите целое число больше 0. Сумма ставки не должны превышать сумму текущего баланса")
+//    }
     
     @IBAction func selectSegmentalControl() {
         teamChecked = selectTeamSegmentedControl.selectedSegmentIndex == 0 ? game.teamOne.team : game.teamTwo.team
+        setSelectedTeamColor()
     }
     
     @IBAction func betSliderAction() {
@@ -78,6 +78,22 @@ final class SelectGameViewController: UIViewController {
     
     
     // MARK: - Function
+
+    private func setSelectedTeamColor() {
+        if selectTeamSegmentedControl.selectedSegmentIndex == 0 {
+            teamOneLabel.textColor = UIColor(red: 196/255, green: 164/255, blue: 57/255, alpha: 1)
+            raitingTeamOneLabel.textColor = UIColor(red: 196/255, green: 164/255, blue: 57/255, alpha: 1)
+
+            teamTwoLabel.textColor = .black
+            raitingTeamTwoLabel.textColor = .black
+        } else {
+            teamTwoLabel.textColor = UIColor(red: 196/255, green: 164/255, blue: 57/255, alpha: 1)
+            raitingTeamTwoLabel.textColor = UIColor(red: 196/255, green: 164/255, blue: 57/255, alpha: 1)
+
+            teamOneLabel.textColor = .black
+            raitingTeamOneLabel.textColor = .black
+        }
+    }
     
    private func transmitData() {
 

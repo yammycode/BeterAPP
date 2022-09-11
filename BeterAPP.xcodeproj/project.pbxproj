@@ -21,7 +21,6 @@
 		C8484EEA28CBD0B9003BF196 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8484EE928CBD0B9003BF196 /* Main.storyboard */; };
 		C875C82228C88AD2004F55D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82128C88AD2004F55D2 /* AppDelegate.swift */; };
 		C875C82428C88AD2004F55D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C82328C88AD2004F55D2 /* SceneDelegate.swift */; };
-		C875C82928C88AD2004F55D2 /* SecondScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875C82728C88AD2004F55D2 /* SecondScreen.storyboard */; };
 		C875C82B28C88AD4004F55D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C875C82A28C88AD4004F55D2 /* Assets.xcassets */; };
 		C875C82E28C88AD4004F55D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875C82C28C88AD4004F55D2 /* LaunchScreen.storyboard */; };
 		C875C83B28C88F84004F55D2 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C83A28C88F84004F55D2 /* Account.swift */; };
@@ -30,6 +29,7 @@
 		C875C84328C89A1D004F55D2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C84228C89A1D004F55D2 /* Game.swift */; };
 		C875C84528C89BE7004F55D2 /* GameEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C875C84428C89BE7004F55D2 /* GameEvent.swift */; };
 		C8A57A4228CCB00D0036C06C /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A57A4128CCB00D0036C06C /* MainTabBarViewController.swift */; };
+		C8C56D7D28CE54F0003C3D7F /* SecondScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C875C82728C88AD2004F55D2 /* SecondScreen.storyboard */; };
 		C8E9B51428C9EB0900F3984F /* TotalResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E9B51328C9EB0900F3984F /* TotalResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -227,14 +227,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C56D7D28CE54F0003C3D7F /* SecondScreen.storyboard in Resources */,
 				C801500228CC768400F70495 /* videoplayback.mp4 in Resources */,
 				C8484EEA28CBD0B9003BF196 /* Main.storyboard in Resources */,
 				C875C82E28C88AD4004F55D2 /* LaunchScreen.storyboard in Resources */,
 				C875C82B28C88AD4004F55D2 /* Assets.xcassets in Resources */,
-				C875C82928C88AD2004F55D2 /* SecondScreen.storyboard in Resources */,
 				C816027628C91EDC0051CA90 /* GameEvents.storyboard in Resources */,
 				5B7A1BDA28CA6EBB0060FF4E /* History.storyboard in Resources */,
-				C875C82928C88AD2004F55D2 /* SecondScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
