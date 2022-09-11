@@ -15,7 +15,7 @@ struct GameEvent {
 
     init(teamOne: Team, teamTwo: Team, time: Int) {
         team = Double.random(in: 0...1) > 0.5 ? teamOne : teamTwo
-        isGoal = Double.random(in: 0...1) > 0.7
+        isGoal = Double.random(in: 0...1) > 0.8
 
         let eventTexts = isGoal ? data.goalEventTexts : data.notGoalEventTexts
         let eventText = eventTexts.shuffled().first ?? ""
