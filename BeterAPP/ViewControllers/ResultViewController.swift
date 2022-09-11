@@ -86,7 +86,7 @@ final class ResultViewController: UIViewController {
     }
 
     private func getFormattedBet(_ value: Double) -> String {
-        String(format: "%.0f", value)
+        String(format: "%.2f", value)
     }
 
 

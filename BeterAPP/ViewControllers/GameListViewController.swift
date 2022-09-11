@@ -13,16 +13,6 @@ final class GameListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 100
-
-        if let navigationBar = self.navigationController?.navigationBar {
-            let firstFrame = CGRect(x: 20, y: 0, width: navigationBar.frame.width, height: navigationBar.frame.height - 40)
-
-            let firstLabel = UILabel(frame: firstFrame)
-            firstLabel.text = "Ваш баланс составояет \(account.budget)$"
-
-            navigationBar.addSubview(firstLabel)
-
-        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,7 +31,7 @@ final class GameListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard  let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
                 as? HeaderGameListTableViewCell else { return UITableViewCell() }
         
         let game = gameList[indexPath.row]
@@ -74,6 +64,10 @@ final class GameListViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "Ваш баланс составляет \(account.budget)$"
+    }
+
     
     //MARK: - Table View Delegate
     
@@ -89,7 +83,4 @@ extension GameListViewController: GameItemCellDelegator {
     }
 }
 
-
-
-    // MARK: - Navigation
 

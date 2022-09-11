@@ -16,7 +16,7 @@ final class GameEventsViewController: UITableViewController {
     var account: Account!
 
     /// Общее время матча
-    private let gameTime = 10
+    private let gameTime = 90
     /// Текущее время матча
     private var currentTime = 0
     /// Шаг времени матча для настройки частоты наступления событий
@@ -87,7 +87,7 @@ final class GameEventsViewController: UITableViewController {
 // MARK: - add event extension
 extension GameEventsViewController {
     private func addEvent() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: { [self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(800), execute: { [self] in
             generateNewEvent()
 
 

@@ -64,7 +64,7 @@ final class HistoreViewController: UITableViewController {
                         content.secondaryText = getFormattedBet(winner.rating * (game.betValue ?? 1)) + "$"
                     } else {
                         content.text = "Вы проиграли"
-                        content.secondaryText = "-\(getFormattedBet(winner.rating * gameBetValue))$"
+                        content.secondaryText = "-\(getFormattedBet(gameBetValue))$"
                     }
                 }
 
