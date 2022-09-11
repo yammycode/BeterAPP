@@ -65,7 +65,7 @@ final class GameListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        "Ваш баланс составляет \(account.budget)$"
+        "Ваш баланс составляет \(String(format: "%.2f", account.budget))$"
     }
 
     
