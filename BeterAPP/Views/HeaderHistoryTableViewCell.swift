@@ -9,11 +9,14 @@ import UIKit
 
 class HeaderHistoryTableViewCell: UITableViewCell {
     
-    @IBOutlet var teamTwoImage: UIImageView!
+
     @IBOutlet var teamOneImage: UIImageView!
+    @IBOutlet var teamTwoImage: UIImageView!
     
     
     @IBOutlet var teamOneLabel: UILabel!
     @IBOutlet var teamTwoLabel: UILabel!
+    
+    
     
 }
