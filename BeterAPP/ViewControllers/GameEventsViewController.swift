@@ -124,7 +124,7 @@ extension GameEventsViewController {
 
 // MARK: - Table scroll extension
 extension GameEventsViewController {
-    func scrollToBottom(){
+    private func scrollToBottom(){
         DispatchQueue.main.async {
             if self.events.count > 0 {
                 let scrollIndex = self.isGameInProcess ? self.events.count : self.events.count + 1
